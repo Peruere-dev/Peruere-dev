@@ -4,6 +4,7 @@
 <img src="https://raw.githubusercontent.com/Peruere-dev/Peruere-dev/output/character-card.svg" alt="Peruere-dev — Everlasting as the moon." width="100%">
 
 <a href="https://github.com/Peruere-dev/Columbina_Hotfix"><img src="https://img.shields.io/badge/now%20building-Columbina_Hotfix-6cc5ff?style=flat-square&logo=github" alt="now building: Columbina_Hotfix"></a>
+<a href="https://discord.gg/gAUq76gjr"><img src="https://img.shields.io/badge/Discord-XiYuGI-5865F2?style=flat-square&logo=discord&logoColor=white" alt="Discord: XiYuGI"></a>
 
 <img src="https://raw.githubusercontent.com/Peruere-dev/Peruere-dev/output/app-console.svg" alt="Live repository console: stars, forks, open issues and last push" width="100%">
 

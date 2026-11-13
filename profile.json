@@ -15,6 +15,14 @@
         "color": "6cc5ff",
         "logo": "github",
         "href": "https://github.com/Peruere-dev/Columbina_Hotfix"
+      },
+      {
+        "label": "Discord",
+        "value": "XiYuGI",
+        "color": "5865F2",
+        "logo": "discord",
+        "logoColor": "white",
+        "href": "https://discord.gg/gAUq76gjr"
       }
     ],
     "stack": [
