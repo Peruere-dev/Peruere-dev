@@ -10,7 +10,7 @@
 
 <img src="https://raw.githubusercontent.com/Peruere-dev/Peruere-dev/output/terminal.svg" alt="Terminal session: whoami, about.txt and a sudo joke that fails" width="100%">
 
-<img src="https://skillicons.dev/icons?i=python,go,docker,git,linux" alt="python, go, docker, git, linux">
+<img src="https://skillicons.dev/icons?i=go,java,python,c" alt="go, java, python, c">
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Peruere-dev/Peruere-dev/output/github-snake-dark.svg">

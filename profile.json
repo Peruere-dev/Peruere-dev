@@ -26,11 +26,10 @@
       }
     ],
     "stack": [
-      "python",
       "go",
-      "docker",
-      "git",
-      "linux"
+      "java",
+      "python",
+      "c"
     ]
   },
   "tracked_repo": "Peruere-dev/Columbina_Hotfix",
@@ -93,7 +92,7 @@
       ],
       [
         "out",
-        "language : Python, Go (and whatever the bug needs)"
+        "language : Go, Java, Python, C"
       ],
       [
         "out",
