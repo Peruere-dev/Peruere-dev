@@ -49,19 +49,24 @@
     "footer": "Class: Builder · Region: Earth · Element: ☕",
     "stats": [
       {
-        "label": "Python",
-        "value": 86,
-        "color": "#f0b35b"
-      },
-      {
         "label": "Go",
-        "value": 74,
+        "value": 88,
         "color": "#6cc5ff"
       },
       {
-        "label": "Debugging",
-        "value": 81,
+        "label": "Java",
+        "value": 76,
+        "color": "#f0b35b"
+      },
+      {
+        "label": "Python",
+        "value": 74,
         "color": "#b58cff"
+      },
+      {
+        "label": "C",
+        "value": 62,
+        "color": "#7ee787"
       },
       {
         "label": "Coffee Resistance",

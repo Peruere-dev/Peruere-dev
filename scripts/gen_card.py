@@ -1,17 +1,24 @@
-"""Game-style character card (820x300).
+"""Game-style character card.
 
-All motion is SMIL: twinkling stars, a counter-rotating emblem and stat bars
-that ease out from zero. Regenerate with: python3 scripts/build.py
+Height adapts to the number of skill bars, so the config can hold four, five
+or six of them without colliding with the footer. All motion is SMIL:
+twinkling stars, a counter-rotating emblem and bars that ease out from zero.
+Regenerate with: python3 scripts/build.py
 """
 import random
 
 import svg_kit as kit
 
-CW, CH = 820, 300
+CW = 820
 STAR_SEED = 618  # fixed seed => stable artwork across runs
 STAR_COUNT = 46
 BARS_X, BARS_Y, BAR_STEP = 330, 176, 28
 TRACK_X, TRACK_W, TRACK_H = BARS_X + 150, 250, 8
+BOTTOM_PAD = 40
+
+
+def height_for(bar_count):
+    return BARS_Y + (bar_count - 1) * BAR_STEP + BOTTOM_PAD
 
 
 def _stars(width, height, count=STAR_COUNT, seed=STAR_SEED):
@@ -29,8 +36,8 @@ def _stars(width, height, count=STAR_COUNT, seed=STAR_SEED):
     return "\n".join(lines)
 
 
-def _emblem(initial):
-    return f'''  <g transform="translate(160 150)">
+def _emblem(initial, center):
+    return f'''  <g transform="translate(160 {center})">
     <circle r="92" fill="none" stroke="url(#gold)" stroke-width="1.5" stroke-dasharray="4 8">
       <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="40s" repeatCount="indefinite"/>
     </circle>
@@ -65,40 +72,42 @@ def _bars(stats):
 
 def render(cfg):
     user, theme, card = cfg["user"], cfg["theme"], cfg["card"]
+    stats = card["stats"]
+    ch = height_for(len(stats))
+    center = ch // 2
     bg = theme["card_bg"]
     accent, accent_dark = theme["accent"], theme["accent_dark"]
     name = user["name"]
     rating = "★" * int(user.get("star_rating", 5))
+    # rough width estimate for the 40px bold name, keeps the stars right after it
+    stars_x = BARS_X + int(len(name) * 23) + 16
     tagline_cn = str(user.get("tagline_cn", "")).strip()
     quote = f'“{kit.esc(user["tagline"])}”'
     if tagline_cn:
         quote += f' — {kit.esc(tagline_cn)}'
 
-    # rough monospace-free width estimate for the 40px bold name
-    stars_x = BARS_X + int(len(name) * 23) + 16
-
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{CW}" height="{CH}" viewBox="0 0 {CW} {CH}" font-family="{kit.SANS}">
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{CW}" height="{ch}" viewBox="0 0 {CW} {ch}" font-family="{kit.SANS}">
   <defs>
     {kit.linear_gradient("sky", [(0, bg[0]), (0.6, bg[1]), (1, bg[2])], 0, 0, 1, 1)}
     {kit.linear_gradient("gold", [(0, accent), (1, accent_dark)], 0, 0, 1, 1)}
     <radialGradient id="glow"><stop offset="0" stop-color="{accent}" stop-opacity="0.45"/><stop offset="1" stop-color="{accent}" stop-opacity="0"/></radialGradient>
-    <clipPath id="frame"><rect width="{CW}" height="{CH}" rx="16"/></clipPath>
+    <clipPath id="frame"><rect width="{CW}" height="{ch}" rx="16"/></clipPath>
   </defs>
   <g clip-path="url(#frame)">
-    <rect width="{CW}" height="{CH}" fill="url(#sky)"/>
-{_stars(CW, CH)}
-    <circle cx="160" cy="150" r="140" fill="url(#glow)"/>
+    <rect width="{CW}" height="{ch}" fill="url(#sky)"/>
+{_stars(CW, ch)}
+    <circle cx="160" cy="{center}" r="140" fill="url(#glow)"/>
   </g>
-  <rect x="1" y="1" width="{CW - 2}" height="{CH - 2}" rx="16" fill="none" stroke="url(#gold)" stroke-opacity="0.55"/>
+  <rect x="1" y="1" width="{CW - 2}" height="{ch - 2}" rx="16" fill="none" stroke="url(#gold)" stroke-opacity="0.55"/>
 
-{_emblem(user.get("initial") or name[:1].upper())}
+{_emblem(user.get("initial") or name[:1].upper(), center)}
 
   <text x="{BARS_X}" y="70" fill="{theme["muted"]}" font-size="13" letter-spacing="3">{kit.esc(card["title"])}</text>
   <text x="{BARS_X}" y="112" fill="#fff" font-size="40" font-weight="700" letter-spacing="1">{kit.esc(name)}</text>
   <text x="{stars_x}" y="112" fill="url(#gold)" font-size="22">{rating}</text>
   <text x="{BARS_X}" y="140" fill="{theme["text"]}" font-size="15" font-style="italic">{quote}</text>
-{_bars(card["stats"])}
-  <text x="{CW - 24}" y="{CH - 16}" fill="#5d6591" font-size="11" text-anchor="end">{kit.esc(card["footer"])}</text>
+{_bars(stats)}
+  <text x="{CW - 24}" y="{ch - 16}" fill="#5d6591" font-size="11" text-anchor="end">{kit.esc(card["footer"])}</text>
 </svg>
 '''
 

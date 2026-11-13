@@ -5,6 +5,9 @@ Rasterizes the frozen snapshots and asserts that each named region actually
 contains ink -- this catches "everything is invisible", elements pushed off
 the canvas and collided rows, which XML validation cannot see.
 
+Regions are expressed as fractions of the panel size, so changing the number
+of skill bars or log lines does not invalidate them.
+
 Dev-only: needs `rsvg-convert` and Pillow. `python3 scripts/check.py`
 """
 import subprocess
@@ -22,28 +25,28 @@ SNAPSHOTS = ROOT / "dist" / "snapshot"
 ZOOM = 2
 INK_THRESHOLD = 90  # dark themes: anything brighter than this is content
 
-# name -> (viewBox width, [(region, x0, y0, x1, y1), ...])
+# file -> [(region, fx0, fy0, fx1, fy1), ...] in 0..1 of the panel size
 REGIONS = {
-    "character-card.svg": (820, [
-        ("title", 330, 52, 700, 80),
-        ("name", 330, 84, 560, 120),
-        ("bars", 480, 160, 745, 270),
-        ("emblem", 40, 30, 280, 270),
-        ("footer", 560, 270, 800, 296),
-    ]),
-    "terminal.svg": (820, [
-        ("titlebar", 300, 6, 520, 32),
-        ("first-line", 20, 44, 400, 74),
-        ("body", 20, 140, 700, 300),
-        ("cursor", 20, 320, 130, 360),
-    ]),
-    "app-console.svg": (850, [
-        ("titlebar", 300, 6, 560, 32),
-        ("log", 20, 44, 800, 232),
-        ("prompt", 20, 220, 220, 250),
-        ("tiles", 24, 258, 828, 356),
-        ("footer", 20, 366, 830, 418),
-    ]),
+    "character-card.svg": [
+        ("title", 0.40, 0.14, 0.85, 0.25),
+        ("name", 0.40, 0.25, 0.69, 0.38),
+        ("bars", 0.58, 0.48, 0.90, 0.92),
+        ("emblem", 0.02, 0.05, 0.36, 0.95),
+        ("footer", 0.68, 0.90, 0.98, 1.00),
+    ],
+    "terminal.svg": [
+        ("titlebar", 0.36, 0.01, 0.64, 0.09),
+        ("first-line", 0.02, 0.12, 0.50, 0.20),
+        ("body", 0.02, 0.38, 0.86, 0.84),
+        ("cursor", 0.02, 0.88, 0.17, 1.00),
+    ],
+    "app-console.svg": [
+        ("titlebar", 0.35, 0.01, 0.66, 0.09),
+        ("log", 0.02, 0.10, 0.95, 0.56),
+        ("prompt", 0.02, 0.50, 0.28, 0.60),
+        ("tiles", 0.02, 0.60, 0.98, 0.85),
+        ("footer", 0.02, 0.86, 0.98, 1.00),
+    ],
 }
 
 
@@ -59,24 +62,23 @@ def main():
     failures = []
     with tempfile.TemporaryDirectory() as tmp:
         for snapshot in sorted(SNAPSHOTS.glob("*.svg")):
-            spec = REGIONS.get(snapshot.name)
-            if not spec:
+            regions = REGIONS.get(snapshot.name)
+            if not regions:
                 continue
-            width, regions = spec
             png = Path(tmp) / (snapshot.stem + ".png")
-            subprocess.run(["rsvg-convert", "-w", str(width * ZOOM),
+            subprocess.run(["rsvg-convert", "-w", str(1000 * ZOOM // 1),
                             str(snapshot), "-o", str(png)], check=True)
             image = Image.open(png)
-            scale = image.width / width
             print(f"\n{snapshot.name}  {image.width}x{image.height}")
-            for label, x0, y0, x1, y1 in regions:
-                box = (int(x0 * scale), int(y0 * scale),
-                       int(x1 * scale), int(y1 * scale))
+            for label, fx0, fy0, fx1, fy1 in regions:
+                box = (int(fx0 * image.width), int(fy0 * image.height),
+                       int(fx1 * image.width), int(fy1 * image.height))
                 ratio = ink_ratio(image, box)
                 status = "ok" if ratio >= 0.002 else "EMPTY"
                 print(f"  {label:<12} ink={ratio:6.2%}  {status}")
                 if ratio < 0.002:
                     failures.append(f"{snapshot.name}:{label} is blank")
+
     if failures:
         print("\nFAILED:")
         for failure in failures:

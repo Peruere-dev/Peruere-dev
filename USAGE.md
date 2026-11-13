@@ -70,7 +70,7 @@ python3 -m http.server 8765 --bind 127.0.0.1   # 在 kit 目录下执行
 | `user.stack` | skillicons 图标列表 `["python","go",...]` |
 | `tracked_repo` | 数据面板追踪的仓库，格式 `owner/repo` |
 | `theme` | 主色、卡片三段渐变、文字色 |
-| `card.stats[]` | 属性条：`label` `value`(0-100) `color`，可选 `shown` 覆盖显示值 |
+| `card.stats[]` | 属性条：`label` `value`(0-100) `color`，可选 `shown` 覆盖显示值；**条数可变，卡片高度自适应** |
 | `terminal.script[]` | 逐行 `["cmd"\|"out"\|"err", 文本]` |
 | `console.log[]` | 控制台日志 `["INFO"\|"WARN"\|"ERR", 文本]` |
 | `emit_readme` | 是否让 build 顺带生成 `README.md` |
