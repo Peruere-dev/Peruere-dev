@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Profile README Kit · 预览</title>
+<style>
+  :root {
+    --bg: #0b0f17; --fg: #e6edf3; --muted: #8b95b5; --line: #232b3d;
+    --card: #111726; --accent: #f0b35b; --ok: #7ee787; --bad: #ff7b72;
+  }
+  body.bg-light { --bg:#ffffff; --fg:#1f2328; --muted:#59636e; --line:#d1d9e0; --card:#f6f8fa; }
+  body.bg-midnight { --bg:#000000; --fg:#e6edf3; --muted:#7d86a8; --line:#1b2233; --card:#0a0d14; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body {
+    background: var(--bg); color: var(--fg); font: 14px/1.5 system-ui,
+    -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+    -webkit-text-size-adjust: 100%;
+  }
+  a { color: var(--accent); }
+  code, .mono { font-family: ui-monospace, "JetBrains Mono", Consolas, monospace; }
+
+  header {
+    position: sticky; top: 0; z-index: 10; backdrop-filter: blur(8px);
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    border-bottom: 1px solid var(--line); padding: 10px 14px;
+  }
+  .row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+  h1 { font-size: 15px; margin: 0; font-weight: 650; letter-spacing: .2px; }
+  h1 span { color: var(--muted); font-weight: 400; }
+  .spacer { flex: 1; }
+
+  .seg { display: inline-flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+  .seg button {
+    appearance: none; border: 0; background: transparent; color: var(--muted);
+    font: inherit; padding: 6px 11px; cursor: pointer;
+  }
+  .seg button[aria-pressed="true"] { background: var(--accent); color: #1a1206; font-weight: 600; }
+  .seg button + button { border-left: 1px solid var(--line); }
+  .ctl label { color: var(--muted); font-size: 12px; }
+  input[type=range] { width: 110px; accent-color: var(--accent); vertical-align: middle; }
+  .btn {
+    appearance: none; font: inherit; cursor: pointer; padding: 6px 11px;
+    border-radius: 8px; border: 1px solid var(--line); background: var(--card);
+    color: var(--fg);
+  }
+  .btn:hover { border-color: var(--accent); }
+
+  main { padding: 16px 14px 60px; max-width: 1200px; margin: 0 auto; }
+  h2 { font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
+       color: var(--muted); margin: 26px 0 10px; }
+
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+          overflow: hidden; margin-bottom: 14px; }
+  .card-head { display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap;
+               padding: 9px 12px; border-bottom: 1px solid var(--line); font-size: 12px; }
+  .card-head b { font-size: 13px; }
+  .card-head .path { color: var(--muted); }
+  .stage { display: grid; place-items: center; padding: 16px; min-height: 80px; }
+  .stage img { display: block; width: 100%; height: auto; border-radius: 6px; }
+  .err { color: var(--bad); font-size: 12.5px; text-align: center; padding: 14px; }
+  .err code { color: var(--fg); }
+
+  .readme-wrap { border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+  .readme-box {
+    padding: 24px; font-size: 16px; line-height: 1.5;
+    background: var(--bg); color: var(--fg);
+  }
+  .readme-box img { max-width: 100%; }
+  .readme-box .note { color: var(--muted); font-size: 12.5px; border: 1px dashed var(--line);
+                      border-radius: 8px; padding: 10px 12px; margin: 12px 0; }
+  footer { color: var(--muted); font-size: 12px; margin-top: 26px; line-height: 1.7; }
+  kbd { border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 5px;
+        padding: 1px 5px; font-size: 11px; }
+  @media (max-width: 620px) {
+    header { position: static; }
+    .spacer { display: none; }
+  }
+</style>
+</head>
+<body class="bg-dark">
+<header>
+  <div class="row">
+    <h1>Profile README Kit <span>· 预览</span></h1>
+    <div class="spacer"></div>
+
+    <div class="seg" id="mode">
+      <button data-mode="anim" aria-pressed="true">动画</button>
+      <button data-mode="static" aria-pressed="false">定格</button>
+    </div>
+
+    <div class="seg" id="bg">
+      <button data-bg="dark" aria-pressed="true">GitHub 深</button>
+      <button data-bg="light" aria-pressed="false">浅</button>
+      <button data-bg="midnight" aria-pressed="false">纯黑</button>
+    </div>
+
+    <span class="ctl"><label for="zoom">宽度</label>
+      <input id="zoom" type="range" min="40" max="100" step="5" value="100"></span>
+
+    <button class="btn" id="replay">重播</button>
+  </div>
+</header>
+
+<main>
+  <h2>组件</h2>
+  <div class="card" data-name="character-card">
+    <div class="card-head"><b>角色卡</b><span class="path mono">dist/character-card.svg</span><span class="size"></span></div>
+    <div class="stage"></div>
+  </div>
+  <div class="card" data-name="app-console">
+    <div class="card-head"><b>实时数据面板</b><span class="path mono">dist/app-console.svg</span><span class="size"></span></div>
+    <div class="stage"></div>
+  </div>
+  <div class="card" data-name="terminal">
+    <div class="card-head"><b>打字机终端</b><span class="path mono">dist/terminal.svg</span><span class="size"></span></div>
+    <div class="stage"></div>
+  </div>
+
+  <h2>README 实际效果</h2>
+  <div class="readme-wrap"><div class="readme-box" id="readme">载入中…</div></div>
+
+  <footer>
+    <div>动画由 SVG 内的 SMIL 驱动（GitHub 会剥掉图片里的 JS），所以这里的 <code>&lt;img&gt;</code> 和 profile 页表现一致。</div>
+    <div>“定格”读的是 <code class="mono">dist/snapshot/</code>：动画元素被移除、终值回填，用于截图和不支持 SMIL 的查看器。</div>
+    <div>快捷键：<kbd>r</kbd> 重播 · <kbd>d</kbd> 切换深浅 · <kbd>s</kbd> 切换动画/定格</div>
+  </footer>
+</main>
+
+<script>
+const state = { mode: "anim", width: 100 };
+const svgPath = (name) => state.mode === "anim"
+  ? `../dist/${name}.svg`
+  : `../dist/snapshot/${name}.svg`;
+
+function paint(force) {
+  document.querySelectorAll(".card").forEach((card) => {
+    const name = card.dataset.name;
+    const stage = card.querySelector(".stage");
+    const sizeEl = card.querySelector(".size");
+    const src = svgPath(name);
+
+    const img = new Image();
+    img.alt = name;
+    img.style.width = state.width + "%";
+    img.onerror = () => {
+      stage.innerHTML = `<div class="err">缺少 <code>${src}</code><br>先在 kit 目录运行 <code>python3 scripts/build.py</code></div>`;
+      sizeEl.textContent = "";
+    };
+    img.onload = () => { stage.replaceChildren(img); };
+    img.src = force ? `${src}?t=${Date.now()}` : src;
+
+    fetch(src, { method: "HEAD" })
+      .then((r) => r.ok ? r.headers.get("content-length") : null)
+      .then((len) => { sizeEl.textContent = len ? (len / 1024).toFixed(1) + " KB" : ""; })
+      .catch(() => {});
+  });
+}
+
+function paintReadme() {
+  fetch("../README.md")
+    .then((r) => r.text())
+    .then((text) => {
+      let html = text.replace(/^<!--[\s\S]*?-->\s*/, "");
+      // profile 页引用 output 分支的 raw 文件；这里换成本地构建产物
+      html = html.replace(/https:\/\/raw\.githubusercontent\.com\/[^/]+\/[^/]+\/output\//g, "../dist/");
+      html = html.replace(/<picture>[\s\S]*?<\/picture>/,
+        `<div class="note">贪吃蛇图由 Platane/snk 在 CI 里生成，本地没有产物，已在预览中隐藏。</div>`);
+      document.getElementById("readme").innerHTML = html;
+    })
+    .catch(() => {
+      document.getElementById("readme").innerHTML =
+        '<div class="err">读不到 README.md</div>';
+    });
+}
+
+document.getElementById("mode").addEventListener("click", (event) => {
+  const button = event.target.closest("button[data-mode]");
+  if (!button) return;
+  state.mode = button.dataset.mode;
+  document.querySelectorAll("#mode button").forEach((b) =>
+    b.setAttribute("aria-pressed", String(b === button)));
+  paint(true);
+});
+
+document.getElementById("bg").addEventListener("click", (event) => {
+  const button = event.target.closest("button[data-bg]");
+  if (!button) return;
+  document.body.className = "bg-" + button.dataset.bg;
+  document.querySelectorAll("#bg button").forEach((b) =>
+    b.setAttribute("aria-pressed", String(b === button)));
+});
+
+document.getElementById("zoom").addEventListener("input", (event) => {
+  state.width = Number(event.target.value);
+  document.querySelectorAll(".stage img").forEach((img) => {
+    img.style.width = state.width + "%";
+  });
+});
+
+document.getElementById("replay").addEventListener("click", () => paint(true));
+
+document.addEventListener("keydown", (event) => {
+  if (event.metaKey || event.ctrlKey || event.altKey) return;
+  const key = event.key.toLowerCase();
+  if (key === "r") { paint(true); return; }
+  if (key === "d") {
+    const order = ["dark", "light", "midnight"];
+    const body = document.body;
+    const next = order[(order.findIndex((c) => body.classList.contains("bg-" + c)) + 1) % order.length];
+    document.querySelectorAll("#bg button").forEach((b) =>
+      b.setAttribute("aria-pressed", String(b.dataset.bg === next)));
+    body.className = "bg-" + next;
+    return;
+  }
+  if (key === "s") {
+    state.mode = state.mode === "anim" ? "static" : "anim";
+    document.querySelectorAll("#mode button").forEach((b) =>
+      b.setAttribute("aria-pressed", String(b.dataset.mode === state.mode)));
+    paint(true);
+  }
+});
+
+paint();
+paintReadme();
+</script>
+</body>
+</html>

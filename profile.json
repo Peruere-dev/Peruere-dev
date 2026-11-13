@@ -1,0 +1,151 @@
+{
+  "user": {
+    "name": "Peruere-dev",
+    "handle": "Peruere-dev",
+    "initial": "P",
+    "location": "Earth",
+    "tagline": "Everlasting as the moon.",
+    "tagline_cn": "",
+    "star_rating": 5,
+    "discord": "yourhandle",
+    "badges": [
+      {
+        "label": "now building",
+        "value": "Columbina_Hotfix",
+        "color": "6cc5ff",
+        "logo": "github",
+        "href": "https://github.com/Peruere-dev/Columbina_Hotfix"
+      }
+    ],
+    "stack": [
+      "python",
+      "go",
+      "docker",
+      "git",
+      "linux"
+    ]
+  },
+  "tracked_repo": "Peruere-dev/Columbina_Hotfix",
+  "theme": {
+    "accent": "#f0b35b",
+    "accent_dark": "#d49a3a",
+    "text": "#c9d1f0",
+    "muted": "#8e97c2",
+    "card_bg": [
+      "#101629",
+      "#1d1b3f",
+      "#2a1f4a"
+    ]
+  },
+  "card": {
+    "title": "CHARACTER · 角色档案",
+    "footer": "Class: Builder · Region: Earth · Element: ☕",
+    "stats": [
+      {
+        "label": "Python",
+        "value": 86,
+        "color": "#f0b35b"
+      },
+      {
+        "label": "Go",
+        "value": 74,
+        "color": "#6cc5ff"
+      },
+      {
+        "label": "Debugging",
+        "value": 81,
+        "color": "#b58cff"
+      },
+      {
+        "label": "Coffee Resistance",
+        "value": 12,
+        "color": "#ff7b72",
+        "shown": "∞"
+      }
+    ]
+  },
+  "terminal": {
+    "title": "you@earth: ~",
+    "script": [
+      [
+        "cmd",
+        "whoami"
+      ],
+      [
+        "out",
+        "you  ·  an ordinary person."
+      ],
+      [
+        "cmd",
+        "cat about.txt"
+      ],
+      [
+        "out",
+        "location : Earth"
+      ],
+      [
+        "out",
+        "language : Python, Go (and whatever the bug needs)"
+      ],
+      [
+        "out",
+        "hobby    : making slow things fast"
+      ],
+      [
+        "cmd",
+        "ls ~/projects"
+      ],
+      [
+        "out",
+        "one-project/    next-idea/    todo-forever.md"
+      ],
+      [
+        "cmd",
+        "make today-count"
+      ],
+      [
+        "out",
+        "[ok] shipped something small"
+      ],
+      [
+        "err",
+        "Reminder: tomorrow repeats."
+      ]
+    ]
+  },
+  "console": {
+    "title": "Columbina_Hotfix — server console",
+    "footer_note": "stars / forks / open issues are live · refreshed daily",
+    "log": [
+      [
+        "INFO",
+        "Booting profile generator · stdlib only, no deps"
+      ],
+      [
+        "INFO",
+        "Loading config ....................... ok"
+      ],
+      [
+        "INFO",
+        "Fetching repository stats ............ ok"
+      ],
+      [
+        "INFO",
+        "Rendering character card ............. ok"
+      ],
+      [
+        "WARN",
+        "Coffee level low. Continuing anyway."
+      ],
+      [
+        "INFO",
+        "Publishing to the output branch"
+      ],
+      [
+        "INFO",
+        "Done. See you tomorrow."
+      ]
+    ]
+  },
+  "emit_readme": true
+}
