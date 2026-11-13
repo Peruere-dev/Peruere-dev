@@ -35,6 +35,8 @@ def render(cfg):
 
 <img src="{raw}/app-console.svg" alt="Live repository console: stars, forks, open issues and last push" width="100%">
 
+<img src="{raw}/terminal.svg" alt="Terminal session: whoami, about.txt and a sudo joke that fails" width="100%">
+
 <img src="https://skillicons.dev/icons?i={stack}" alt="{stack.replace(",", ", ")}">
 
 <picture>

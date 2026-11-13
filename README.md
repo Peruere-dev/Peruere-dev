@@ -8,6 +8,8 @@
 
 <img src="https://raw.githubusercontent.com/Peruere-dev/Peruere-dev/output/app-console.svg" alt="Live repository console: stars, forks, open issues and last push" width="100%">
 
+<img src="https://raw.githubusercontent.com/Peruere-dev/Peruere-dev/output/terminal.svg" alt="Terminal session: whoami, about.txt and a sudo joke that fails" width="100%">
+
 <img src="https://skillicons.dev/icons?i=python,go,docker,git,linux" alt="python, go, docker, git, linux">
 
 <picture>
