@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="328" viewBox="0 0 820 328" font-family="'Segoe UI','PingFang SC','Microsoft YaHei','Noto Sans CJK SC',Helvetica,Arial,sans-serif">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#101629" /><stop offset="0.6" stop-color="#1d1b3f" /><stop offset="1" stop-color="#2a1f4a" /></linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f0b35b" /><stop offset="1" stop-color="#d49a3a" /></linearGradient>
+    <radialGradient id="glow"><stop offset="0" stop-color="#f0b35b" stop-opacity="0.45" /><stop offset="1" stop-color="#f0b35b" stop-opacity="0" /></radialGradient>
+    </defs>
+  <g>
+    <rect width="820" height="328" fill="url(#sky)" />
+    <circle cx="470" cy="93" r="1" fill="#fff" opacity="0.15" />
+    <circle cx="711" cy="34" r="0.8" fill="#fff" opacity="0.15" />
+    <circle cx="174" cy="158" r="1" fill="#fff" opacity="0.15" />
+    <circle cx="749" cy="144" r="1.3" fill="#fff" opacity="0.15" />
+    <circle cx="52" cy="252" r="1" fill="#fff" opacity="0.15" />
+    <circle cx="785" cy="315" r="0.8" fill="#fff" opacity="0.15" />
+    <circle cx="820" cy="113" r="1" fill="#fff" opacity="0.15" />
+    <circle cx="204" cy="316" r="1" fill="#fff" opacity="0.15" />
+    <circle cx="144" cy="58" r="1" fill="#fff" opacity="0.15" />
+    <circle cx="356" cy="98" r="0.8" fill="#fff" opacity="0.15" />
+    <circle cx="365" cy="32" r="1.3" fill="#fff" opacity="0.15" />
+    <circle cx="253" cy="18" r="1.3" fill="#fff" opacity="0.15" />
+    <circle cx="416" cy="234" r="1" fill="#fff" opacity="0.15" />
+    <circle cx="163" cy="189" r="0.8" fill="#fff" opacity="0.15" />
+    <circle cx="697" cy="273" r="1.3" fill="#fff" opacity="0.15" />
+    <circle cx="794" cy="220" r="0.8" fill="#fff" opacity="0.15" />
+    <circle cx="575" cy="313" r="1" fill="#fff" opacity="0.15" />
+    <circle cx="65" cy="18" r="1" fill="#fff" opacity="0.15" />
+    <circle cx="647" cy="4" r="1" fill="#fff" opacity="0.15" />
+    <circle cx="115" cy="195" r="1.3" fill="#fff" opacity="0.15" />
+    <circle cx="244" cy="152" r="0.8" fill="#fff" opacity="0.15" />
+    <circle cx="393" cy="108" r="1" fill="#fff" opacity="0.15" />
+    <circle cx="674" cy="216" r="1" fill="#fff" opacity="0.15" />
+    <circle cx="23" cy="284" r="1.3" fill="#fff" opacity="0.15" />
+    <circle cx="353" cy="42" r="0.8" fill="#fff" opacity="0.15" />
+    <circle cx="103" cy="102" r="1.3" fill="#fff" opacity="0.15" />
+    <circle cx="409" cy="172" r="1.3" fill="#fff" opacity="0.15" />
+    <circle cx="279" cy="199" r="0.8" fill="#fff" opacity="0.15" />
+    <circle cx="558" cy="139" r="1.3" fill="#fff" opacity="0.15" />
+    <circle cx="516" cy="307" r="1.3" fill="#fff" opacity="0.15" />
+    <circle cx="541" cy="35" r="1.3" fill="#fff" opacity="0.15" />
+    <circle cx="181" cy="116" r="0.8" fill="#fff" opacity="0.15" />
+    <circle cx="697" cy="281" r="1" fill="#fff" opacity="0.15" />
+    <circle cx="486" cy="75" r="0.8" fill="#fff" opacity="0.15" />
+    <circle cx="800" cy="166" r="1" fill="#fff" opacity="0.15" />
+    <circle cx="50" cy="283" r="1" fill="#fff" opacity="0.15" />
+    <circle cx="159" cy="263" r="1" fill="#fff" opacity="0.15" />
+    <circle cx="286" cy="131" r="0.8" fill="#fff" opacity="0.15" />
+    <circle cx="344" cy="38" r="1" fill="#fff" opacity="0.15" />
+    <circle cx="619" cy="220" r="1.3" fill="#fff" opacity="0.15" />
+    <circle cx="130" cy="213" r="1" fill="#fff" opacity="0.15" />
+    <circle cx="79" cy="231" r="0.8" fill="#fff" opacity="0.15" />
+    <circle cx="683" cy="280" r="0.8" fill="#fff" opacity="0.15" />
+    <circle cx="777" cy="294" r="0.8" fill="#fff" opacity="0.15" />
+    <circle cx="203" cy="18" r="1" fill="#fff" opacity="0.15" />
+    <circle cx="788" cy="17" r="1" fill="#fff" opacity="0.15" />
+    <circle cx="160" cy="164" r="140" fill="url(#glow)" />
+  </g>
+  <rect x="1" y="1" width="818" height="326" rx="16" fill="none" stroke="url(#gold)" stroke-opacity="0.55" />
+
+  <g transform="translate(160 164)">
+    <circle r="92" fill="none" stroke="url(#gold)" stroke-width="1.5" stroke-dasharray="4 8" transform="0">
+      </circle>
+    <g transform="360">
+      <polygon points="0,-78 67,-39 67,39 0,78 -67,39 -67,-39" fill="#ffffff08" stroke="url(#gold)" stroke-width="2" />
+      </g>
+    <circle r="58" fill="#141a33" stroke="url(#gold)" stroke-width="2" />
+    <text y="22" text-anchor="middle" font-size="64" font-weight="700" fill="url(#gold)" font-family="Georgia,'Times New Roman',serif">P</text>
+    <g fill="url(#gold)">
+      <path d="M0,-104 l4,8 -4,8 -4,-8z" /><path d="M0,104 l4,-8 -4,-8 -4,8z" />
+    </g>
+  </g>
+
+  <text x="330" y="70" fill="#8e97c2" font-size="13" letter-spacing="3">CHARACTER · 角色档案</text>
+  <text x="330" y="112" fill="#fff" font-size="40" font-weight="700" letter-spacing="1">Peruere-dev</text>
+  <text x="599" y="112" fill="url(#gold)" font-size="22">★★★★★</text>
+  <text x="330" y="140" fill="#c9d1f0" font-size="15" font-style="italic">“Everlasting as the moon.”</text>
+    <text x="330" y="176" fill="#c9d1f0" font-size="13">Go</text>
+    <text x="780" y="176" fill="#6cc5ff" font-size="13" text-anchor="end" font-weight="bold">88</text>
+    <rect x="480" y="166" width="250" height="8" rx="4" fill="#ffffff14" />
+    <rect x="480" y="166" width="220.0" height="8" rx="4" fill="#6cc5ff" />
+    <text x="330" y="204" fill="#c9d1f0" font-size="13">Java</text>
+    <text x="780" y="204" fill="#f0b35b" font-size="13" text-anchor="end" font-weight="bold">76</text>
+    <rect x="480" y="194" width="250" height="8" rx="4" fill="#ffffff14" />
+    <rect x="480" y="194" width="190.0" height="8" rx="4" fill="#f0b35b" />
+    <text x="330" y="232" fill="#c9d1f0" font-size="13">Python</text>
+    <text x="780" y="232" fill="#b58cff" font-size="13" text-anchor="end" font-weight="bold">74</text>
+    <rect x="480" y="222" width="250" height="8" rx="4" fill="#ffffff14" />
+    <rect x="480" y="222" width="185.0" height="8" rx="4" fill="#b58cff" />
+    <text x="330" y="260" fill="#c9d1f0" font-size="13">C</text>
+    <text x="780" y="260" fill="#7ee787" font-size="13" text-anchor="end" font-weight="bold">62</text>
+    <rect x="480" y="250" width="250" height="8" rx="4" fill="#ffffff14" />
+    <rect x="480" y="250" width="155.0" height="8" rx="4" fill="#7ee787" />
+    <text x="330" y="288" fill="#c9d1f0" font-size="13">Coffee Resistance</text>
+    <text x="780" y="288" fill="#ff7b72" font-size="13" text-anchor="end" font-weight="bold">∞</text>
+    <rect x="480" y="278" width="250" height="8" rx="4" fill="#ffffff14" />
+    <rect x="480" y="278" width="30.0" height="8" rx="4" fill="#ff7b72" />
+  <text x="796" y="312" fill="#5d6591" font-size="11" text-anchor="end">Class: Builder · Region: Earth · Element: ☕</text>
+</svg>

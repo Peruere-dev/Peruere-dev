@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="850" height="423" viewBox="0 0 850 423" font-family="'JetBrains Mono','Cascadia Code','SFMono-Regular',Consolas,'Liberation Mono',monospace" font-size="13.5">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0b0f17" /><stop offset="1" stop-color="#111827" /></linearGradient>
+    <pattern id="scan" width="4" height="4" patternUnits="userSpaceOnUse"><rect width="4" height="1" fill="#ffffff05" /></pattern>
+  </defs>
+  <rect width="850" height="423" rx="12" fill="url(#bg)" stroke="#263042" />
+  <rect width="850" height="38" rx="12" fill="#151c2a" />
+  <rect y="26" width="850" height="12" fill="#151c2a" />
+  <circle cx="22" cy="19" r="6" fill="#ff5f57" /><circle cx="42" cy="19" r="6" fill="#febc2e" /><circle cx="62" cy="19" r="6" fill="#28c840" />
+  <text x="425.0" y="24.0" text-anchor="middle" fill="#7d86a8" font-size="13">Columbina_Hotfix — server console</text>
+  <rect width="850" height="423" rx="12" fill="url(#scan)" />
+  <circle cx="820" cy="19" r="4" fill="#28c840" opacity="1" />
+  <text x="808" y="23.5" text-anchor="end" fill="#28c840" font-size="11.5">ONLINE</text>
+  <g opacity="1"><text x="24" y="62"><tspan fill="#56607a">[04:45:04 </tspan><tspan fill="#7ee787">INFO</tspan><tspan fill="#56607a">]</tspan><tspan fill="#c9d1e6">  Booting profile generator · stdlib only, no deps</tspan></text>
+  </g>
+  <g opacity="1"><text x="24" y="87"><tspan fill="#56607a">[04:45:05 </tspan><tspan fill="#7ee787">INFO</tspan><tspan fill="#56607a">]</tspan><tspan fill="#c9d1e6">  Loading config ....................... ok</tspan></text>
+  </g>
+  <g opacity="1"><text x="24" y="112"><tspan fill="#56607a">[04:45:06 </tspan><tspan fill="#7ee787">INFO</tspan><tspan fill="#56607a">]</tspan><tspan fill="#c9d1e6">  Fetching repository stats ............ ok</tspan></text>
+  </g>
+  <g opacity="1"><text x="24" y="137"><tspan fill="#56607a">[04:45:07 </tspan><tspan fill="#7ee787">INFO</tspan><tspan fill="#56607a">]</tspan><tspan fill="#c9d1e6">  Rendering character card ............. ok</tspan></text>
+  </g>
+  <g opacity="1"><text x="24" y="162"><tspan fill="#56607a">[04:45:08 </tspan><tspan fill="#f0b35b">WARN</tspan><tspan fill="#56607a">]</tspan><tspan fill="#c9d1e6">  Coffee level low. Continuing anyway.</tspan></text>
+  </g>
+  <g opacity="1"><text x="24" y="187"><tspan fill="#56607a">[04:45:09 </tspan><tspan fill="#7ee787">INFO</tspan><tspan fill="#56607a">]</tspan><tspan fill="#c9d1e6">  Publishing to the output branch</tspan></text>
+  </g>
+  <g opacity="1"><text x="24" y="212"><tspan fill="#56607a">[04:45:10 </tspan><tspan fill="#7ee787">INFO</tspan><tspan fill="#56607a">]</tspan><tspan fill="#c9d1e6">  Done. See you tomorrow.</tspan></text>
+  </g>
+  <g opacity="1"><text x="24" y="237"><tspan fill="#6cc5ff">&gt; </tspan><tspan fill="#e6edf3">/stats</tspan></text>
+  </g>
+  <g opacity="1"><rect x="92.2" y="225" width="8" height="15" fill="#e6edf3" opacity="1" />
+  </g>
+  <g opacity="1" transform="0 0">
+    <rect x="24.0" y="261" width="188.5" height="92" rx="8" fill="#ffffff07" stroke="#f0b35b" stroke-opacity=".35" />
+    <text x="38.0" y="285" fill="#7d86a8" font-size="11" letter-spacing="1.5">★ STARS</text>
+    <text x="38.0" y="327" fill="#f0b35b" font-size="34" font-weight="bold">5</text>
+  </g>
+  <g opacity="1" transform="0 0">
+    <rect x="228.5" y="261" width="188.5" height="92" rx="8" fill="#ffffff07" stroke="#6cc5ff" stroke-opacity=".35" />
+    <text x="242.5" y="285" fill="#7d86a8" font-size="11" letter-spacing="1.5">⑂ FORKS</text>
+    <text x="242.5" y="327" fill="#6cc5ff" font-size="34" font-weight="bold">4</text>
+  </g>
+  <g opacity="1" transform="0 0">
+    <rect x="433.0" y="261" width="188.5" height="92" rx="8" fill="#ffffff07" stroke="#ff7b72" stroke-opacity=".35" />
+    <text x="447.0" y="285" fill="#7d86a8" font-size="11" letter-spacing="1.5">● OPEN ISSUES</text>
+    <text x="447.0" y="327" fill="#ff7b72" font-size="34" font-weight="bold">0</text>
+  </g>
+  <g opacity="1" transform="0 0">
+    <rect x="637.5" y="261" width="188.5" height="92" rx="8" fill="#ffffff07" stroke="#7ee787" stroke-opacity=".35" />
+    <text x="651.5" y="285" fill="#7d86a8" font-size="11" letter-spacing="1.5">↻ LAST PUSH</text>
+    <text x="651.5" y="327" fill="#7ee787" font-size="26" font-weight="bold">2mo ago</text>
+  </g>
+  <g opacity="1"><line x1="24" y1="379" x2="826" y2="379" stroke="#263042" />
+    <text x="24" y="407" fill="#7d86a8" font-size="12">Peruere-dev · Earth · Java ☕   discord: <tspan fill="#a5b4fc">yourhandle</tspan></text>
+    <text x="826" y="407" text-anchor="end" fill="#56607a" font-size="11.5">updated 2026-11-14 04:45 UTC · stars / forks / open issues are live · refreshed daily</text>
+  </g>
+</svg>

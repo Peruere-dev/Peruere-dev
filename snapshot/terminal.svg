@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="820" height="360" viewBox="0 0 820 360" font-family="'JetBrains Mono','Cascadia Code','SFMono-Regular',Consolas,'Liberation Mono',monospace" font-size="14">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0f1320" /><stop offset="1" stop-color="#171b2e" /></linearGradient>
+  </defs>
+  <rect width="820" height="360" rx="12" fill="url(#bg)" stroke="#2b3150" />
+  <rect width="820" height="36" rx="12" fill="#1c2136" />
+  <rect y="24" width="820" height="12" fill="#1c2136" />
+  <circle cx="22" cy="19" r="6" fill="#ff5f57" /><circle cx="42" cy="19" r="6" fill="#febc2e" /><circle cx="62" cy="19" r="6" fill="#28c840" />
+  <text x="410.0" y="23.0" text-anchor="middle" fill="#7d86a8" font-size="13">you@earth: ~</text>
+  <g opacity="1"><text x="26" y="62"><tspan fill="#7ee787">❯ </tspan><tspan fill="#e6edf3">whoami</tspan></text>
+  </g>
+  <text x="26" y="86" fill="#a5b1d6" opacity="1" xml:space="preserve">you  ·  an ordinary person.</text>
+  <g opacity="1"><text x="26" y="110"><tspan fill="#7ee787">❯ </tspan><tspan fill="#e6edf3">cat about.txt</tspan></text>
+  </g>
+  <text x="26" y="134" fill="#a5b1d6" opacity="1" xml:space="preserve">location : Earth</text>
+  <text x="26" y="158" fill="#a5b1d6" opacity="1" xml:space="preserve">language : Go, Java, Python, C</text>
+  <text x="26" y="182" fill="#a5b1d6" opacity="1" xml:space="preserve">hobby    : making slow things fast</text>
+  <g opacity="1"><text x="26" y="206"><tspan fill="#7ee787">❯ </tspan><tspan fill="#e6edf3">ls ~/projects</tspan></text>
+  </g>
+  <text x="26" y="230" fill="#a5b1d6" opacity="1" xml:space="preserve">one-project/    next-idea/    todo-forever.md</text>
+  <g opacity="1"><text x="26" y="254"><tspan fill="#7ee787">❯ </tspan><tspan fill="#e6edf3">make today-count</tspan></text>
+  </g>
+  <text x="26" y="278" fill="#a5b1d6" opacity="1" xml:space="preserve">[ok] shipped something small</text>
+  <text x="26" y="302" fill="#ff7b72" opacity="1" xml:space="preserve">Reminder: tomorrow repeats.</text>
+  <g opacity="1"><text x="26" y="326" fill="#7ee787">❯</text>
+    <rect x="43.2" y="313" width="8" height="16" fill="#e6edf3" opacity="1" />
+  </g>
+</svg>
